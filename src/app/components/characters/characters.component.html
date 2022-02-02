@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen class="ion-padding" scroll-y="false">
+   
+      <ion-item *ngFor="let character of characters">
+        <ion-slides>
+          <ion-slide>
+        <ion-card>
+          <img src="{{character.image}}" >
+          <!-- <ion-card-title (click) = "verDetalle(datos.id)" > {{character.name}}</ion-card-title>-->
+          <ion-card-title> {{character.name}}</ion-card-title>
+          <ion-card-subtitle> Estado: {{character.status}}</ion-card-subtitle>
+          <ion-card-content>Especie: {{character.species}}</ion-card-content>
+        </ion-card>
+      </ion-slide>
+      </ion-slides>
+      </ion-item>
+
+
+    <ion-infinite-scroll threshold="25%" position="bottom" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando..">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>
