@@ -1,34 +1,6 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Episodios
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Episodios</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content [fullscreen] = True>
+<ion-content padding [fullscreen]="true">
    
-    <ion-item *ngFor="let episode of episodes">
-    
-      <ion-card>
-        
-        <ion-card-title > {{episode.name}}</ion-card-title>
-        <ion-card-subtitle> {{episode.air_date}}</ion-card-subtitle>
-        <ion-card-content>Episodio: {{episode.episode}}</ion-card-content>
-      </ion-card>
-
-    </ion-item>
-
-    <ion-infinite-scroll threshold="25%" position="bottom" (ionInfinite)="loadData($event)">
-      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando..">
-      </ion-infinite-scroll-content>
-    </ion-infinite-scroll>
-
+  <app-episodes [episodes] = "episodes"></app-episodes>
 
 </ion-content>

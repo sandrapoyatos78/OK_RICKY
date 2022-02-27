@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { character } from 'src/app/interfaces/interfaces';
 import { DataService } from 'src/app/services/data.service';
-
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -10,14 +8,12 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class Tab1Page {
 
-  characters: character[]= [];
-
-  constructor(public data: DataService) {
-  }
+  characters: character[]=[];
+  constructor(public dataService: DataService) {}
 
   loadCharacters(event?)
   {
-    this.data.getCharacters().subscribe(
+    this.dataService.getCharacters().subscribe(
       resp=> {
         console.log('Characters', resp);
         this.characters.push(...resp.results);
@@ -28,6 +24,7 @@ export class Tab1Page {
   }
   ngOnInit():void {
     this.loadCharacters();
+   
   }
 }
 

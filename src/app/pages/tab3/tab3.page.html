@@ -1,17 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-    Favoritos
-    </ion-title>
+<ion-header>
+  <ion-toolbar id="color">
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content padding>
+  <h1 class="title">Personajes Favoritos</h1>
 
-  
+  <ion-list *ngIf="favList.length != 0">
+    <ion-item *ngFor="let fav of favList; let i = index;">
+      <ion-label (click)="removeFav(i)">{{fav.character}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <h1 class="title">Episodios Favoritos</h1>
+
+  <ion-list *ngIf="favList.length != 0">
+    <ion-item *ngFor="let fav of favList; let i = index;">
+      <ion-label (click)="removeFav(i)">{{fav.episode}}</ion-label>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
