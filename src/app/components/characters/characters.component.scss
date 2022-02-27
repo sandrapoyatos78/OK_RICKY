@@ -1,0 +1,16 @@
+$fondo: #bc4343;
+$list: #ffff;
+
+ion-content, ion-list, ion-label{
+    background-color: $fondo;
+    border-radius: 10px;
+   
+}
+
+.d-flex {
+    display: flex;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}

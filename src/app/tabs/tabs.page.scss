@@ -1,1 +1,16 @@
-
+ion-avatar {
+    margin-top: -14.8%;
+  
+}
+.boton{
+    --color: rgb(121, 24, 24);
+    
+    --color-selected: #a94e5d;
+ }
+    
+.boton:hover {
+    
+    --color: #ae2e2e;
+    
+    --color-selected: rgb(195, 124, 124);
+    }

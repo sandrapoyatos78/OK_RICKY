@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+      <ion-item *ngFor="let episode of episodes">
+        <ion-card>
+          <ion-card-title> {{episode.name}}</ion-card-title>
+         
+          <ion-text> Episodio: {{episode.episode}} 
+                      Fecha: {{episode.air_date}} 
+                      Creado: {{episode.created}} <br>
+          </ion-text>
+        </ion-card>
+      </ion-item>
+
+
+    <ion-infinite-scroll threshold="25%" position="bottom" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando..">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>
